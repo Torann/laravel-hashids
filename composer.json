@@ -1,7 +1,7 @@
 {
     "name": "torann/hashids",
     "description": "Laravel 4.1 package for Hashids",
-    "keywords": ["laravel", "promise", "roles", "permissions", "group", "user"],
+    "keywords": ["laravel", "hash", "hashid", "encrypt", "decrypt"],
 	"license": "BSD 2-Clause",
     "authors": [
         {
