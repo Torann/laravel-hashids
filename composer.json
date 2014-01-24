@@ -1,0 +1,28 @@
+{
+    "name": "torann/hashids",
+    "description": "Laravel 4.1 package for Hashids",
+    "keywords": ["laravel", "promise", "roles", "permissions", "group", "user"],
+	"license": "BSD 2-Clause",
+    "authors": [
+        {
+            "name": "Daniel Stainback",
+            "email": "daniel@lyften.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.1.x",
+        "hashids/hashids": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Torann\\Hashids": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.3-dev"
+        }
+    },
+    "minimum-stability": "dev"
+}
