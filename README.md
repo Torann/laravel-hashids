@@ -1,4 +1,4 @@
-# Hashids for Laravel 4.1
+# Hashids for Laravel 4
 
 [![Latest Stable Version](https://poser.pugx.org/torann/hashids/v/stable.png)](https://packagist.org/packages/torann/hashids) [![Total Downloads](https://poser.pugx.org/torann/hashids/downloads.png)](https://packagist.org/packages/torann/hashids)
 
@@ -16,7 +16,7 @@ Generate hashes from numbers, like YouTube or Bitly. Use hashids when you do not
 To get the latest version of Hashids simply require it in your `composer.json` file.
 
 ~~~
-"torann/hashids": "dev-master"
+"torann/hashids": "1.0.*@dev"
 ~~~
 
 You'll then need to run `composer install` to download it and have the autoloader updated.
