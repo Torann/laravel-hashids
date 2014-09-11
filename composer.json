@@ -2,7 +2,7 @@
     "name": "torann/hashids",
     "description": "Laravel 4.1 package for Hashids",
     "keywords": ["laravel", "hash", "hashid", "encrypt", "decrypt"],
-    "license": "BSD 2-Clause",
+	"license": "BSD 2-Clause",
     "authors": [
         {
             "name": "Daniel Stainback",
@@ -12,7 +12,7 @@
     "require": {
         "php": ">=5.3.0",
         "illuminate/support": "~4.1",
-        "hashids/hashids": "0.3.1"
+        "hashids/hashids": "1.0.0"
     },
     "autoload": {
         "psr-0": {
@@ -21,7 +21,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.3-dev"
+            "dev-master": "1.0-dev"
         }
     },
     "minimum-stability": "dev"
