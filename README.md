@@ -35,7 +35,7 @@ Once Hashids is installed you need to register the service provider with the app
 
 Run this on the command line from the root of your project:
 
-	$ php artisan config:publish torann/hashids
+    $ php artisan config:publish torann/hashids
 
 This will publish Hashids' config to ``app/config/packages/torann/hashids/``.
 
@@ -43,24 +43,24 @@ This will publish Hashids' config to ``app/config/packages/torann/hashids/``.
 
 Once you've followed all the steps and completed the installation you can use Hashids.
 
-### Encodeing
+### Encrypting
 
-You can simply encode a single id:
+You can simply encrypt on id:
 
 ```php
-Hashids::encode(1); // Returns Ri7Bi
+Hashids::encrypt(1); // Returns Ri7Bi
 ```
 
 or multiple..
 
 ```php
-Hashids::encode(1, 21, 12, 12, 666); // Returns MMtaUpSGhdA
+Hashids::encrypt(1, 21, 12, 12, 666); // Returns MMtaUpSGhdA
 ```
 
-### Decodeing
+### Decrypting
 
 ```php
-Hashids::decode(Ri7Bi);
+Hashids::decrypt(Ri7Bi);
 
 // Returns
 array (size=1)
@@ -70,7 +70,7 @@ array (size=1)
 or multiple..
 
 ```php
-Hashids::decode(MMtaUpSGhdA);
+Hashids::decrypt(MMtaUpSGhdA);
 
 // Returns
 array (size=5)
@@ -80,21 +80,5 @@ array (size=5)
 3 => int 12
 4 => int 666
 ```
-
-## Changelog
-
-**1.0.0**
-
-- Several public functions are renamed to be more appropriate:
-	- Function `encrypt()` changed to `encode()`
-	- Function `decrypt()` changed to `decode()`
-	- Function `encryptHex()` changed to `encodeHex()`
-	- Function `decryptHex()` changed to `decodeHex()`
-	
-	Hashids was designed to encode integers, primary ids at most. Hashids is the wrong algorithm to encrypt sensitive data. So to encourage more appropriate use, `encrypt/decrypt` is being "downgraded" to `encode/decode`.
-
-- Version tag added: `1.0`
-- `README.md` updated
-
 
 All credit for Hashids goes to Ivan Akimov (@ivanakimov), thanks to for making it!
