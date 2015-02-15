@@ -13,8 +13,9 @@ class HashidsServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		// Register the package namespace
-		$this->package('torann/hashids');
+        $this->publishes([
+            __DIR__.'/../../config/hashids.php' => config_path('hashids.php'),
+        ]);
 
 		// Add 'Assets' facade alias
 		AliasLoader::getInstance()->alias('Hashids', 'Torann\Hashids\Facade');
@@ -31,7 +32,7 @@ class HashidsServiceProvider extends ServiceProvider {
 		$this->app->singleton('hashids', function($app)
 		{
 			// Read settings from config file
-			$config = $app->config->get('hashids::config', array());
+            $config = $app->config->get('hashids', array());
 
            	return new Hashids($config['salt'], $config['length'], $config['alphabet']);
 		});

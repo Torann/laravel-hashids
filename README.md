@@ -1,4 +1,4 @@
-# Hashids for Laravel 4
+# Hashids for Laravel 5
 
 [![Latest Stable Version](https://poser.pugx.org/torann/hashids/v/stable.png)](https://packagist.org/packages/torann/hashids) [![Total Downloads](https://poser.pugx.org/torann/hashids/downloads.png)](https://packagist.org/packages/torann/hashids)
 
@@ -12,16 +12,17 @@ Generate hashes from numbers, like YouTube or Bitly. Use hashids when you do not
 
 - [Hashids on Packagist](https://packagist.org/packages/torann/hashids)
 - [Hashids on GitHub](https://github.com/torann/laravel-hashids)
+- [Laravel 4 Installation](https://github.com/Torann/laravel-hashids/tree/1.0.0)
 
 To get the latest version of Hashids simply require it in your `composer.json` file.
 
 ~~~
-"torann/hashids": "1.0.*@dev"
+"torann/hashids": "2.0.*@dev"
 ~~~
 
 You'll then need to run `composer install` to download it and have the autoloader updated.
 
-Once Hashids is installed you need to register the service provider with the application. Open up `app/config/app.php` and find the `providers` key.
+Once Hashids is installed you need to register the service provider with the application. Open up `config/app.php` and find the `providers` key.
 
 
 ```php
@@ -31,13 +32,15 @@ Once Hashids is installed you need to register the service provider with the app
 > There is no need to add the Facade, the package will add it for you.
 
 
-### Publish the config
+### Publish the configurations
 
 Run this on the command line from the root of your project:
 
-	$ php artisan config:publish torann/hashids
+~~~
+$ php artisan vendor:publish
+~~~
 
-This will publish Hashids' config to ``app/config/packages/torann/hashids/``.
+A configuration file will be publish to `config/hashids.php`.
 
 ## Usage
 
@@ -82,6 +85,11 @@ array (size=5)
 ```
 
 ## Changelog
+
+**2.0.0**
+
+- Upgraded to Laravel 5
+- Upgraded to Hashids 1.0.5
 
 **1.0.0**
 
