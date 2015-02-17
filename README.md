@@ -12,7 +12,7 @@ Generate hashes from numbers, like YouTube or Bitly. Use hashids when you do not
 
 - [Hashids on Packagist](https://packagist.org/packages/torann/hashids)
 - [Hashids on GitHub](https://github.com/torann/laravel-hashids)
-- [Laravel 4 Installation](https://github.com/Torann/laravel-hashids/tree/1.0.0)
+- [Laravel 4 Installation](#user-content-laravel-4-installation)
 
 To get the latest version of Hashids simply require it in your `composer.json` file.
 
@@ -41,6 +41,17 @@ $ php artisan vendor:publish
 ~~~
 
 A configuration file will be publish to `config/hashids.php`.
+
+
+## Laravel 4 Installation
+
+Add verison 1.0 of Hashids in your `composer.json` file.
+
+~~~
+"torann/hashids": "1.0.*"
+~~~
+
+And following the directions in the [README](https://github.com/Torann/laravel-hashids/tree/1.0.0) on version 1.0.
 
 ## Usage
 
