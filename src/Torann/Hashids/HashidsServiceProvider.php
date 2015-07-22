@@ -14,11 +14,12 @@ class HashidsServiceProvider extends ServiceProvider {
 	public function boot()
 	{
         $this->publishes([
-            __DIR__.'/../../config/hashids.php' => config_path('hashids.php'),
+            __DIR__.'/../../config/hashids.php' => $this->getConfigPath(),
         ]);
 
-		// Add 'Assets' facade alias
-		AliasLoader::getInstance()->alias('Hashids', 'Torann\Hashids\Facade');
+        if (! $this->isLumen()) {
+            AliasLoader::getInstance()->alias('Hashids', 'Torann\Hashids\Facade');
+        }
 	}
 
 	/**
@@ -28,14 +29,20 @@ class HashidsServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		// Bind 'hashids' shared component to the IoC container
-		$this->app->singleton('hashids', function($app)
-		{
-			// Read settings from config file
+        if ($this->isLumen()) {
+            $this->app->configure('hashids');
+        }
+
+        // Bind 'hashids' shared component to the IoC container
+        $this->app->singleton('hashids', function($app)
+        {
+            $configPath = __DIR__ . '/../../config/hashids.php';
+            $this->mergeConfigFrom($configPath, 'hashids');
+
             $config = $app->config->get('hashids', array());
 
-           	return new Hashids($config['salt'], $config['length'], $config['alphabet']);
-		});
+            return new Hashids($config['salt'], $config['length'], $config['alphabet']);
+        });
 	}
 
 	/**
@@ -48,4 +55,17 @@ class HashidsServiceProvider extends ServiceProvider {
 		return array();
 	}
 
+    private function isLumen()
+    {
+        return str_contains($this->app->version(), 'Lumen');
+    }
+
+    private function getConfigPath()
+    {
+        if ($this->isLumen()) {
+            return base_path('config/hashids.php');
+        } else {
+            return config_path('hashids.php');
+        }
+    }
 }
