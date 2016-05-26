@@ -34,7 +34,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | The default alphabet contains all lowercase and uppercase letters
-    | and numbers. f you'd like to make it longer, you can add more
+    | and numbers. If you'd like to make it longer, you can add more
     | characters like - @ $ % ^ & * ( ) [ ] { }
     |
     */
