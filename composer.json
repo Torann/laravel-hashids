@@ -2,7 +2,7 @@
     "name": "torann/hashids",
     "description": "Laravel package for Hashids",
     "keywords": ["laravel", "hash", "hashid", "encode", "decode"],
-	"license": "BSD 2-Clause",
+	"license": "BSD-2-Clause",
     "authors": [
         {
             "name": "Daniel Stainback",
