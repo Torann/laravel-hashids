@@ -1,6 +1,8 @@
 <?php namespace Torann\Hashids;
 
 use Hashids\Hashids;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\AliasLoader;
 
@@ -34,9 +36,9 @@ class HashidsServiceProvider extends ServiceProvider
             $config = $app->config->get('hashids');
 
             return new Hashids(
-                array_get($config, 'salt'),
-                array_get($config, 'length', 0),
-                array_get($config, 'alphabet')
+                Arr::get($config, 'salt'),
+                Arr::get($config, 'length', 0),
+                Arr::get($config, 'alphabet')
             );
         });
     }
@@ -48,7 +50,7 @@ class HashidsServiceProvider extends ServiceProvider
      */
     protected function isLumen()
     {
-        return str_contains($this->app->version(), 'Lumen') === true;
+        return Str::contains($this->app->version(), 'Lumen') === true;
     }
 
     /**
@@ -58,6 +60,8 @@ class HashidsServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return ['hashids'];
+        return [
+            'hashids',
+        ];
     }
 }

@@ -6,7 +6,7 @@
     "authors": [
         {
             "name": "Daniel Stainback",
-            "email": "daniel@lyften.com"
+            "email": "torann@gmail.com"
         }
     ],
     "require": {
@@ -17,11 +17,6 @@
     "autoload": {
         "psr-4": {
           "Torann\\Hashids\\": "src/Torann/Hashids"
-        }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "2.0-dev"
         }
     }
 }
