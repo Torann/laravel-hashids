@@ -1,13 +1,14 @@
 language: php
 
 php:
-  - 5.6
-  - 7.1
   - 7.2
   - 7.3
+  - 7.4
 
 before_script:
   - curl -s http://getcomposer.org/installer | php
-  - php composer.phar install --dev
+  - php composer.phar install
 
-script: php ./vendor/bin/phpunit
+script:
+  - ./vendor/bin/phpcs --standard=phpcs.xml src
+  - ./vendor/bin/phpstan --level=0 --memory-limit=-1 --no-progress analyse src

@@ -1,15 +1,15 @@
 <?php
 
-namespace Torann\Hashids;
+namespace Torann\Hashids\Facade;
 
 use Illuminate\Support\Facades\Facade as IlluminateFacade;
 
-class Facade extends IlluminateFacade
+class Hashids extends IlluminateFacade
 {
     /**
-     * Get the registered component.
+     * Get the registered name of the component.
      *
-     * @return object
+     * @return string
      */
     protected static function getFacadeAccessor()
     {

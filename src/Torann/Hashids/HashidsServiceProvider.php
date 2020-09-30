@@ -1,10 +1,11 @@
-<?php namespace Torann\Hashids;
+<?php
+
+namespace Torann\Hashids;
 
 use Hashids\Hashids;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Foundation\AliasLoader;
 
 class HashidsServiceProvider extends ServiceProvider
 {
@@ -19,9 +20,6 @@ class HashidsServiceProvider extends ServiceProvider
             $this->publishes([
                 __DIR__ . '/../../config/hashids.php' => config_path('hashids.php'),
             ]);
-
-            // Add 'Assets' facade alias
-            AliasLoader::getInstance()->alias('Hashids', 'Torann\Hashids\Facade');
         }
     }
 
