@@ -39,6 +39,6 @@ return [
     |
     */
 
-    'alphabet' => null,
+    'alphabet' => 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890',
 
 ];
